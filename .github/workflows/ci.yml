@@ -91,9 +91,6 @@ jobs:
         restore-keys: |
           ${{ runner.OS }}-conda-cache-${{ hashFiles('requirements/*.txt', 'setup.py', 'Makefile*') }}
 
-    - name: brew install mercurial
-      run: brew install mercurial
-
     - name: make conda
       run:
         if [[ -e build/envs.txt ]]; then touch build/envs.txt; fi;
